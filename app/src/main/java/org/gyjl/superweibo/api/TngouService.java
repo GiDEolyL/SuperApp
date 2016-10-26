@@ -31,4 +31,5 @@ public interface TngouService {
      */
     @GET("tnfs/api/list")
     Call<GalleryList> getListById(@Query("id") String id);
+
 }
