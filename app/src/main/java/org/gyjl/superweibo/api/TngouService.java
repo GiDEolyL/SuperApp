@@ -1,14 +1,11 @@
 package org.gyjl.superweibo.api;
 
-import okhttp3.RequestBody;
+import org.gyjl.superweibo.model.GalleryClassList;
+import org.gyjl.superweibo.model.GalleryList;
+
 import retrofit2.Call;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Multipart;
-import retrofit2.http.POST;
-import retrofit2.http.Part;
-import retrofit2.http.Streaming;
+import retrofit2.http.Query;
 
 /**
  * Created by Administrator on 2016/10/26.
@@ -24,17 +21,14 @@ public interface TngouService {
      * @return
      */
     @GET("tnfs/api/classify")
-    Call<String> getGalleryClassify();
+    Call<GalleryClassList> getGalleryClassify();
 
-    @Multipart
-    @POST("file")
-    Call<String> updateFile(@Part("file")RequestBody body,@Part("description") RequestBody des);
-
-    @FormUrlEncoded
-    @POST("oauth2/access_token")
-    Call<String> getAccessToken(@Field("client_id") String id,
-                                @Field("client_secret") String secret,
-                                @Field("grant_type") String type,
-                                @Field("code") String code,
-                                @Field("redirect_uri") String uri);
+    /**
+     * 定义网址，并且指定GET请求的查询参数 id=xxx
+     * x形成 tnfs/api/list?id=xxx
+     * @param id
+     * @return
+     */
+    @GET("tnfs/api/list")
+    Call<GalleryList> getListById(@Query("id") String id);
 }
