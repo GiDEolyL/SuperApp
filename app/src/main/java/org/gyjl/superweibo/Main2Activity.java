@@ -38,7 +38,8 @@ public class Main2Activity extends AppCompatActivity implements MywebviewClient.
 
     @Override
     public void onGetToken(String code) {
-        Call<String> call = mSinaService.getTokenData("98605433", "b5f3b92ead555f2af38e2f2a382eb36c", "authorization_code", code, "https://api.weibo.com/oauth2/default.html");
+        Call<String> call = mSinaService.getTokenData("98605433", "b5f3b92ead555f2af38e2f2a382eb36c",
+                                                      "authorization_code", code, "https://api.weibo.com/oauth2/default.html");
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {

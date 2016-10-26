@@ -1,16 +1,21 @@
 package org.gyjl.superweibo;
 
+import android.util.Log;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 /**
- * Created by Administrator on 2016/10/26.
+ * Project: ${PACKAGE_NAME}
+ * Created by Administrator
+ * Date: 2016/10/26.
  */
 
 public class MywebviewClient extends WebViewClient {
 
-    public MyCallback mCallback;
-    public interface MyCallback{
+    private MyCallback mCallback;
+
+    public interface MyCallback {
         void onGetToken(String code);
     }
 
@@ -20,9 +25,10 @@ public class MywebviewClient extends WebViewClient {
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        System.out.println(url);
+        Log.d("Test", "shouldOverrideUrlLoading: "+url);
         int index = url.lastIndexOf("=");
-        String code = url.substring(index);
+        String code = url.substring(index + 1);
+        Log.d("Test", "shouldOverrideUrlLoading: " + code);
         mCallback.onGetToken(code);
         return false;
     }
