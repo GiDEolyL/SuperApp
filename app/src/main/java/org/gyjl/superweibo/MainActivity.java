@@ -13,6 +13,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
+/**
+ * 大菠萝的activity
+ */
 public class MainActivity extends AppCompatActivity {
 
     private TngouService mTngouService;
