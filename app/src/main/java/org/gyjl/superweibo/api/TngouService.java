@@ -1,7 +1,11 @@
 package org.gyjl.superweibo.api;
 
+import org.gyjl.superweibo.model.GalleryClassList;
+import org.gyjl.superweibo.model.GalleryList;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * Created by Administrator on 2016/10/26.
@@ -17,5 +21,14 @@ public interface TngouService {
      * @return
      */
     @GET("tnfs/api/classify")
-    Call<String> getGalleryClassify();
+    Call<GalleryClassList> getGalleryClassify();
+
+    /**
+     * 定义网址，并且指定GET请求的查询参数 id=xxx
+     * x形成 tnfs/api/list?id=xxx
+     * @param id
+     * @return
+     */
+    @GET("tnfs/api/list")
+    Call<GalleryList> getListById(@Query("id") String id);
 }
