@@ -1,0 +1,39 @@
+#Intellij IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Gradle build folder
+build/
+.gradle/
+
+#Eclipse project files
+.classpath
+.settings/
+.project
+
+#Android
+local.properties
+bin/
+gen/
+
+#JNI compile files
+*.0
+*.0.d
+
+#Android 2.2 c/c++ compile
+.externalNativeBuild/
+
+# OS autugen folder information
+.DS_Store
+Thums.db
+
+# Temp files
+*.bak
+*.tmp
+*.temp
+*.swp
+*.*~
+~*.*
