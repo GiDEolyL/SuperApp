@@ -22,4 +22,24 @@
         android:onClick="btnGetList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Button
+        android:text="获取服务器版本号"
+        android:onClick="btnGetVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="提交POST请求"
+        android:onClick="btnPostLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="提交PUT请求"
+        android:onClick="btnPutJson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="文件上传"
+        android:onClick="btnUploadFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
