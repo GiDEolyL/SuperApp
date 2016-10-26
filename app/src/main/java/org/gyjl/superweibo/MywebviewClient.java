@@ -8,9 +8,23 @@ import android.webkit.WebViewClient;
  */
 
 public class MywebviewClient extends WebViewClient {
+
+    public MyCallback mCallback;
+    public interface MyCallback{
+        void onGetToken(String code);
+    }
+
+    public MywebviewClient(MyCallback callback) {
+        mCallback = callback;
+    }
+
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         System.out.println(url);
+        int index = url.lastIndexOf("=");
+        String code = url.substring(index);
+        System.out.println(code);
+        mCallback.onGetToken(code);
         return false;
     }
 }
