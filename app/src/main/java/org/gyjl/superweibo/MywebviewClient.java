@@ -23,7 +23,6 @@ public class MywebviewClient extends WebViewClient {
         System.out.println(url);
         int index = url.lastIndexOf("=");
         String code = url.substring(index);
-        System.out.println(code);
         mCallback.onGetToken(code);
         return false;
     }
